@@ -2,6 +2,7 @@ package all.pages;
 
 import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.WebDriverRunner;
+import io.qameta.allure.Step;
 
 import static org.testng.Assert.assertEquals;
 
@@ -18,6 +19,7 @@ public class Page<T extends Page> {
         this.redirectedUrl = redirectedUrl;
     }
 
+    @Step("Open page")
     public T open() {
         Selenide.open(url);
         return shouldBeOpen();

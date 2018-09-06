@@ -4,6 +4,7 @@ import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.SelenideElement;
+import io.qameta.allure.Step;
 import org.testng.annotations.AfterMethod;
 
 import static com.codeborne.selenide.Selectors.byText;
@@ -19,6 +20,7 @@ public final class MainPage extends Page<MainPage> {
         super(Configuration.baseUrl);
     }
 
+    @Step("Search phrase from main page")
     public SearchPage search(String searchPhrase) {
         searchButton.click();
         searchField.setValue(searchPhrase);
