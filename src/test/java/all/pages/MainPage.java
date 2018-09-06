@@ -11,7 +11,7 @@ import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.$;
 
 public final class MainPage extends Page<MainPage> {
-    private final SelenideElement searchButton = $("button.header-search__button").find("mychild").shouldBe(Condition.visible);
+    private final SelenideElement searchButton = $("button.header-search__button");
     private final SelenideElement searchField = $("input#new_form_search");
     private final SelenideElement submitSearchButton = $("button.header-search__submit");
     private final SelenideElement submitSearchButton2 = $(byText("Find"));

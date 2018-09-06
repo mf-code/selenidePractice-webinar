@@ -29,11 +29,11 @@ public class FirstTest extends BaseTest {
     public Object[][] searchPhrases() {
         return new Object[][]{
                 {"benefits", 195},
-                {"digital experiences", 277},
+                {"digital experiences", 277}, //277 to demonstrate failed test
         };
     }
 
-    @Test(dataProvider = "searchPhrases", invocationCount = 5)
+    @Test(dataProvider = "searchPhrases", invocationCount = 1)
     public void test(String searchPhrase, Integer resultsCount) {
         SearchPage searchPage = mainPage
                 .open()
@@ -46,9 +46,6 @@ public class FirstTest extends BaseTest {
         searchPage
                 .searchResultCounter
                 .shouldHave(counterText(searchPhrase, resultsCount));
-        searchPage
-                .searchResultCounter
-                .shouldHave(exactText("Some text")).getText();
     }
 
     @AfterMethod(alwaysRun = true)
