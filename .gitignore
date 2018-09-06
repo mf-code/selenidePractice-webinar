@@ -1,0 +1,6 @@
+target
+build
+allure*
+.idea
+*.iml
+*/bin/*
